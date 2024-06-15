@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-
+import { useMediaQuery } from 'react-responsive'
 import GenericHomePageForAllScreens from "./CommonpagesForAllScreens/GenericHomePageForAllScreens"
 import GenericAboutUsPageForAllScreens from "./CommonpagesForAllScreens/GenericAboutPageForAllScreens"
 import GenericContactPageForAllScreens from "./CommonpagesForAllScreens/GenericontactPageForAllScreens"
@@ -15,9 +15,15 @@ function App() {
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
-
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
   const toggleZoomScreen = () => {
-    (document.body.style as any).zoom = "90%";
+    if(isDesktopOrLaptop){
+      (document.body.style as any).zoom = "90%";
+    }
   };
   useEffect(() => {
     if (action !== "POP") {
