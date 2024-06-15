@@ -5,17 +5,12 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
-import Contact from "./pages/Contact";
-import Franchise from "./pages/Franchise";
-import Stores from "./pages/Stores";
-import IPhone1415ProMax from "./pages/IPhone1415ProMax";
-import IPhone1415ProMax1 from "./pages/IPhone1415ProMax1";
-import IPhone1415ProMax2 from "./pages/IPhone1415ProMax2";
-import IPhone1415ProMax3 from "./pages/IPhone1415ProMax3";
-import Stores1 from "./pages/Stores1";
 
+import GenericHomePageForAllScreens from "./CommonpagesForAllScreens/GenericHomePageForAllScreens"
+import GenericAboutUsPageForAllScreens from "./CommonpagesForAllScreens/GenericAboutPageForAllScreens"
+import GenericContactPageForAllScreens from "./CommonpagesForAllScreens/GenericontactPageForAllScreens"
+import GenericFranchisePageForAllScreens from "./CommonpagesForAllScreens/GenerifranchisePageForAllScreens"
+import GenericStoresPageForAllScreens from "./CommonpagesForAllScreens/GenericStorePageForAllScreens"
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -90,16 +85,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about-us" element={<AboutUs />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/franchise" element={<Franchise />} />
-      <Route path="/stores" element={<Stores />} />
-      <Route path="/iphone-14-15-pro-max-3" element={<IPhone1415ProMax />} />
-      <Route path="/iphone-14-15-pro-max-1" element={<IPhone1415ProMax1 />} />
-      <Route path="/iphone-14-15-pro-max-2" element={<IPhone1415ProMax2 />} />
-      <Route path="/iphone-14-15-pro-max-4" element={<IPhone1415ProMax3 />} />
-      <Route path="/stores1" element={<Stores1 />} />
+      <Route path="/" element={ <GenericHomePageForAllScreens />} />
+      <Route path="/about-us" element={<GenericAboutUsPageForAllScreens />} />
+      <Route path="/contact" element={<GenericContactPageForAllScreens />} />
+      <Route path="/franchise" element={<GenericFranchisePageForAllScreens />} />
+      <Route path="/stores" element={<GenericStoresPageForAllScreens />} />
     </Routes>
   );
 }
