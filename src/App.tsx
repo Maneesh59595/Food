@@ -17,7 +17,7 @@ function App() {
   const pathname = location.pathname;
 
   const toggleZoomScreen = () => {
-    document.body.style.zoom = "90%";
+    (document.body.style as any).zoom = "90%";
   };
   useEffect(() => {
     if (action !== "POP") {
