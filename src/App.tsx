@@ -16,16 +16,20 @@ function App() {
   const location = useLocation();
   const pathname = location.pathname;
 
+  const toggleZoomScreen = () => {
+    document.body.style.zoom = "90%";
+  };
   useEffect(() => {
     if (action !== "POP") {
       window.scrollTo(0, 0);
     }
+    toggleZoomScreen()
   }, [action, pathname]);
 
   useEffect(() => {
     let title = "";
     let metaDescription = "";
-
+   
     switch (pathname) {
       case "/":
         title = "";
